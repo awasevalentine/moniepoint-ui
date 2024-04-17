@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { styled } from "@mui/material";
-import { RxAvatar } from "react-icons/rx";
 import { RiSettingsLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FiSearch } from "react-icons/fi";
@@ -17,8 +16,8 @@ export default function Navbar() {
   return (
     <Box className="w-full flex flex-row justify-between items-center">
       <Box className="flex flex-row gap-5 items-center">
-        <img src={Logo1} alt="Brand logo" width={30} height={30} />
-        <img src={Logo2} alt="Framer logo" width={30} height={30} />
+        <img src={Logo1} alt="Brand logo" width={30} height={30} className="cursor-pointer  hover:scale-110"  />
+        <img src={Logo2} alt="Framer logo" width={30} height={30} className="cursor-pointer  hover:scale-110" />
       </Box>
       <BottomNavigation
         showLabels
@@ -83,7 +82,7 @@ const CustomButtonNavAction = styled(
     color: "white",
     height: "fit-content",
     padding: "5px 12px",
-    borderRadius: "2px",
+    borderRadius: "0px",
   },
 
   "&.MuiBottomNavigationAction-label": {
