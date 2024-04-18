@@ -1,6 +1,5 @@
 import { Box, Button } from "@mui/material";
 import logo4 from "../../../assets/logos/mpoint-logo4.svg";
-import { GrView } from "react-icons/gr";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa6";
 import { AiFillEye } from "react-icons/ai";
