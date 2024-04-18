@@ -2,6 +2,8 @@ import { Box } from "@mui/material";
 import Navbar from "../../components/navbar/NavBar";
 import Analytic from "./component/Analytic";
 import OverView from "./component/overview/Overview";
+import Transaction from "./component/transaction/Transaction";
+import Cashflow from "./component/cashflow/Cashflow";
 
 
 const HomePage = () => {
@@ -14,7 +16,7 @@ const HomePage = () => {
         </Box>
       </Box>
       <Box
-        className="relative overflow-x-auto pl-[7rem] mt-[-10rem] overflow-y-hidden w-screen h-[calc(100vh - 460px)]"
+        className="relative overflow-x-auto px-[7rem] mt-[-10rem] overflow-y-hidden w-screen h-[calc(100vh - 460px)]"
       sx={{
         "&::-webkit-scrollbar": {
             width: "0px",
@@ -30,7 +32,10 @@ const HomePage = () => {
       >
         <OverView />
       </Box>
-      <Box className="h-[500px] px-[5rem]"></Box>
+      <Box className="min-h-[300px] px-[7rem] mt-[2rem] mb-[3rem] flex gap-10 justify-between">
+        <Transaction />
+        <Cashflow />
+      </Box>
     </Box>
   );
 };

@@ -3,7 +3,6 @@ import { Box, Button, Typography } from "@mui/material";
 import logo6 from "../../../../assets/logos/mpoint-logo6.svg";
 import { RiArrowRightUpFill } from "react-icons/ri";
 import { AiOutlineLineChart } from "react-icons/ai";
-import { LuArrowLeft } from "react-icons/lu";
 import { RiArrowDropLeftLine } from "react-icons/ri";
 
 const OverViewItems = () => {
