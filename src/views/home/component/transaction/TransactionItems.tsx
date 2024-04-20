@@ -44,7 +44,7 @@ const TransactionItems = ({ item }: IProps) => {
           {item?.image}
         </Box>
         <Box className="flex flex-col gap-0">
-          <span className="font-semibold">{item?.name}</span>
+          <span className="font-medium">{item?.name}</span>
           <span className="text-[#7A7B83] text-[12px]">
             {dayjs(item?.transaction_date).format("ddd, DD MMM, HH:mm")}
           </span>

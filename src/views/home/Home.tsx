@@ -23,7 +23,6 @@ const HomePage = () => {
             height: "2px",
           },
           "&::-webkit-scrollbar-thumb": {
-            // backgroundColor: "#FDC600", // Color of the scrollbar
             borderRadius: "20px",
             width: "0px",
             height: "0px",
@@ -32,7 +31,7 @@ const HomePage = () => {
       >
         <OverView />
       </Box>
-      <Box className="min-h-[300px] px-[7rem] mt-[2rem] mb-[3rem] flex gap-10 justify-between">
+      <Box className="min-h-[300px] px-[7rem] mt-[4rem] mb-[3rem] flex gap-10 justify-between">
         <Transaction />
         <Cashflow />
       </Box>
