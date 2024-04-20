@@ -1,9 +1,10 @@
-import { Box } from "@mui/material";
 import { LineChart, lineElementClasses } from "@mui/x-charts/LineChart";
 
 const uData = [4000, 3000, 2000, 2780, 1890];
 const xLabels = ["Jan 17", "Jan 25", "Feb 1", "Feb 7", "Feb 15"];
-const OverViewChat = () => {
+
+
+const OverViewChat = ({setColor}: {setColor: string}) => {
   return (
       <LineChart
         width={400}
@@ -14,7 +15,7 @@ const OverViewChat = () => {
             label: "uv",
             area: true,
             showMark: false,
-            color: "#AD88C6",
+            color: setColor,
           },
         ]}
         xAxis={[{ scaleType: "point", data: xLabels }]}

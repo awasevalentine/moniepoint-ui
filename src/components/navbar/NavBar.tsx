@@ -9,6 +9,8 @@ import { FiSearch } from "react-icons/fi";
 import Logo1 from "../../assets/logos/mpoint-logo1 (1).svg";
 import Logo2 from "../../assets/logos/mpoint-logo2.svg";
 import Logo3 from "../../assets/logos/mpoint-logo3.svg";
+import { RiArrowDropUpLine } from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 export default function Navbar() {
   const [value, setValue] = React.useState(0);
@@ -16,8 +18,29 @@ export default function Navbar() {
   return (
     <Box className="w-full flex flex-row justify-between items-center">
       <Box className="flex flex-row gap-5 items-center">
-        <img src={Logo1} alt="Brand logo" width={30} height={30} className="cursor-pointer  hover:scale-110"  />
-        <img src={Logo2} alt="Framer logo" width={30} height={30} className="cursor-pointer  hover:scale-110" />
+        <img
+          src={Logo1}
+          alt="Brand logo"
+          width={30}
+          height={30}
+          className="cursor-pointer  hover:scale-110"
+        />
+        <Box className="flex flex-row gap-1 items-center">
+          <img
+            src={Logo2}
+            alt="Framer logo"
+            width={30}
+            height={30}
+            className="cursor-pointer  hover:scale-110"
+          />
+          <Box className="flex gap-2 mt-2">
+            <span className="text-[13px] text-white">Framer</span>
+            <Box className="flex flex-col gap-0 items-center">
+              <RiArrowDropUpLine className="cursor-pointer" color="#C7C8CC" size={12} />
+              <RiArrowDropDownLine className="cursor-pointer mt-[-4px]" color="#C7C8CC" size={12} />
+            </Box>
+          </Box>
+        </Box>
       </Box>
       <BottomNavigation
         showLabels

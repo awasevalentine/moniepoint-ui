@@ -9,6 +9,8 @@ import OverViewChat from "./OverViewChat";
 import { RiArrowRightDownFill } from "react-icons/ri";
 import { formatAmount } from "../../../../util/formatNumberToMoney";
 import { MdOutlineStickyNote2 } from "react-icons/md";
+import { GiTransportationRings } from "react-icons/gi";
+import { CgSpaceBetweenV } from "react-icons/cg";
 
 type IProps = {
   title?: string;
@@ -36,7 +38,12 @@ const OverViewItems = ({
   const [showChat, setShowChat] = useState(false);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        width: showChat ? "670px" : "350px",
+        transition: "width 1s ease-in-out",
+      }}
+    >
       <Box
         className="flex flex-row border border-b-slate-100 pl-[20px] pt-[25px] relative"
         sx={{
@@ -64,27 +71,24 @@ const OverViewItems = ({
         >
           <Box>
             {title === "Business Account" && (
-              <>
-                <img
-                  src={logo6}
-                  alt="Business Account Logo"
-                  width={35}
-                  height={35}
-                />
-              </>
+              <GiTransportationRings
+                size={35}
+                color={isHovered || showChat ? "#AD88C6" : "#C7C8CC"}
+              />
             )}
 
             {title === "Business Savings" && (
-              <img
-                src={logo7}
-                alt="Business Savings Logo"
-                width={35}
-                height={35}
+              <CgSpaceBetweenV
+                size={35}
+                color={isHovered || showChat ? "#C65BCF" : "#C7C8CC"}
               />
             )}
 
             {title === "Tax Reserve" && (
-              <MdOutlineStickyNote2 size={35} color="#C7C8CC" />
+              <MdOutlineStickyNote2
+                size={35}
+                color={isHovered || showChat ? "#FFB6D9" : "#C7C8CC"}
+              />
             )}
           </Box>
           <Box
@@ -196,45 +200,56 @@ const OverViewItems = ({
         </Box>
 
         {isChart && (
-          <Box className="one">
-            {showChat && (
+          <Box
+            sx={{
+              width: showChat ? "400px" : "0",
+              //   width: "fit-content",
+              height: "100%",
+              opacity: showChat ? 1 : 0,
+              transition: "width 1s ease",
+              display: "flex",
+              justifyContent: "flex-start",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                height: "100%",
+                width: showChat ? "405px" : "0",
+                alignItems: "center",
+                opacity: showChat ? 1 : 0,
+                transition: "width 1s ease",
+                marginLeft: "-60px",
+                position: "absolute",
+                bottom: "10px",
+              }}
+            >
+              <OverViewChat
+                setColor={
+                  title === "Business Account"
+                    ? "#AD88C6"
+                    : title === "Tax Reserve"
+                    ? "#FFB6D9"
+                    : title === "Business Savings"
+                    ? "#C65BCF"
+                    : "black"
+                }
+              />
               <Box
-                sx={{
-                  //   width: showChat ? "400px" : "0",
-                  width: "fit-content",
-                  height: "100%",
-                  transition: showChat
-                    ? "width 1.5s ease"
-                    : "width 1.5s ease-in-out",
-                  display: "flex",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    height: "100%",
-                    alignItems: "center",
-                    opacity: showChat ? 1 : 0,
-                    transition: "opacity 1.5s ease-in-out",
-                    marginLeft: '-110px'
-                  }}
-                >
-                  <OverViewChat />
-                  <Box
-                    onClick={() => setShowChat(false)}
-                    className="cursor-pointer mr-[-10px] w-[20px] h-[80%] 
+                onClick={() => setShowChat(false)}
+                className="cursor-pointer mr-[-10px] w-[20px] h-[80%] 
                               flex justify-between items-center bg-slate-200"
-                  >
-                    <RiArrowDropLeftLine size={20} className="font-bold" />
-                  </Box>
-                </Box>
+              >
+                <RiArrowDropLeftLine size={20} className="font-bold" />
               </Box>
-            )}
+            </Box>
           </Box>
         )}
       </Box>
       <Box
+
+      onMouseEnter={()=>setIsHovered(true)}
+      onMouseLeave={()=>setIsHovered(false)}
         sx={{
           borderBottom: isHovered
             ? "2.5px solid #C7C8CC"
